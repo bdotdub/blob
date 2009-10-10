@@ -8,6 +8,10 @@ class BlobAppDelegate < NSObject
   attr_writer :window
   def awakeFromNib
     toolbar = NSToolbar.alloc.initWithIdentifier("BToolbar")
+    
+    toolbar.setAutosavesConfiguration(true)
+    toolbar.setDisplayMode(NSToolbarDisplayModeIconAndLabel)
+    
     @window.setToolbar(toolbar)
   end
 end
