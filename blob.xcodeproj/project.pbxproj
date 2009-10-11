@@ -42,6 +42,8 @@
 		B20F2A291080EAC600E57E29 /* BDiffViewController.rb in Resources */ = {isa = PBXBuildFile; fileRef = B20F2A281080EAC600E57E29 /* BDiffViewController.rb */; };
 		B241F8FA1080FB3000B179C8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B241F8F91080FB3000B179C8 /* WebKit.framework */; };
 		B241F9331081005600B179C8 /* BlobAppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = B241F9321081005600B179C8 /* BlobAppDelegate.rb */; };
+		B2FA68DF1082463800F1E058 /* BToolbarDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = B2FA68DE1082463800F1E058 /* BToolbarDelegate.rb */; };
+		B2FA690410824AFC00F1E058 /* default.html in Resources */ = {isa = PBXBuildFile; fileRef = B2FA690310824AFC00F1E058 /* default.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,9 +82,11 @@
 		4DE3BE130D8651D900ECA448 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = /Library/Frameworks/MacRuby.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* blob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blob.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B20F2A281080EAC600E57E29 /* BDiffViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = BDiffViewController.rb; path = Controllers/BDiffViewController.rb; sourceTree = "<group>"; };
+		B20F2A281080EAC600E57E29 /* BDiffViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = BDiffViewController.rb; path = ruby/Controllers/BDiffViewController.rb; sourceTree = "<group>"; };
 		B241F8F91080FB3000B179C8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		B241F9321081005600B179C8 /* BlobAppDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = BlobAppDelegate.rb; sourceTree = "<group>"; };
+		B2FA68DE1082463800F1E058 /* BToolbarDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = BToolbarDelegate.rb; path = ruby/Delegates/BToolbarDelegate.rb; sourceTree = "<group>"; };
+		B2FA690310824AFC00F1E058 /* default.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = default.html; path = html/default.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +106,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B20F2A281080EAC600E57E29 /* BDiffViewController.rb */,
+				B2FA68D5108245B700F1E058 /* ruby */,
 				B241F9321081005600B179C8 /* BlobAppDelegate.rb */,
 			);
 			name = Classes;
@@ -148,8 +152,9 @@
 		29B97314FDCFA39411CA2CEA /* blob */ = {
 			isa = PBXGroup;
 			children = (
-				172754AE1075979200D0347B /* Tests */,
+				B2FA690010824ABC00F1E058 /* html */,
 				080E96DDFE201D6D7F000001 /* Classes */,
+				172754AE1075979200D0347B /* Tests */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -184,6 +189,39 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2FA68D5108245B700F1E058 /* ruby */ = {
+			isa = PBXGroup;
+			children = (
+				B2FA68DD1082461C00F1E058 /* Delegates */,
+				B2FA68DC108245F100F1E058 /* Controllers */,
+			);
+			name = ruby;
+			sourceTree = "<group>";
+		};
+		B2FA68DC108245F100F1E058 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B20F2A281080EAC600E57E29 /* BDiffViewController.rb */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B2FA68DD1082461C00F1E058 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B2FA68DE1082463800F1E058 /* BToolbarDelegate.rb */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		B2FA690010824ABC00F1E058 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				B2FA690310824AFC00F1E058 /* default.html */,
+			);
+			name = html;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +275,8 @@
 				4DE339F70D74FCDD00ADB6EE /* rb_main.rb in Resources */,
 				B20F2A291080EAC600E57E29 /* BDiffViewController.rb in Resources */,
 				B241F9331081005600B179C8 /* BlobAppDelegate.rb in Resources */,
+				B2FA68DF1082463800F1E058 /* BToolbarDelegate.rb in Resources */,
+				B2FA690410824AFC00F1E058 /* default.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,6 @@ class BDiffViewController < NSObject
   attr_writer :button
   
   def clicked(sender)
-	puts "Button clicked!"
+    puts "Button clicked!"
   end
 end
