@@ -19,12 +19,15 @@ class BlobAppDelegate < NSObject
     else
       @webViewController.load_local_html_page('git_not_found')
     end
-
+  end
+  
+  def stub_open_file(sender)
     # Hard coded actions. Will fix when we handle file opening, etc.
     begin
-      Git::File.new('/Users/benny/Development/ruby/stage/stage.rb')
-      @webViewController.forward_button.setEnabled(false)
+      git_file = Git::File.new('/Users/benny/Development/ruby/stage/stage.rb')
+      @webViewController.previous_button.setEnabled(true)
       @webViewController.load_local_html_page('container')
+      @webViewController.load_file_diffs(git_file)
     rescue Git::FileUntracked
     end
   end

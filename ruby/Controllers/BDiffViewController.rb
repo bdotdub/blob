@@ -28,4 +28,8 @@ class BDiffViewController < NSObject
 
   def forward_revision(sender)
   end
+  
+  def load_file_diffs(git_file)
+    
+  end
 end
