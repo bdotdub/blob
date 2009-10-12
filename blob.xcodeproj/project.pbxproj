@@ -44,6 +44,8 @@
 		B241F9331081005600B179C8 /* BlobAppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = B241F9321081005600B179C8 /* BlobAppDelegate.rb */; };
 		B2FA68DF1082463800F1E058 /* BToolbarDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = B2FA68DE1082463800F1E058 /* BToolbarDelegate.rb */; };
 		B2FA690410824AFC00F1E058 /* default.html in Resources */ = {isa = PBXBuildFile; fileRef = B2FA690310824AFC00F1E058 /* default.html */; };
+		B2FA694A1082E2D000F1E058 /* Git.rb in Resources */ = {isa = PBXBuildFile; fileRef = B2FA69491082E2D000F1E058 /* Git.rb */; };
+		B2FA69561082E7B000F1E058 /* git_not_found.html in Resources */ = {isa = PBXBuildFile; fileRef = B2FA69551082E7B000F1E058 /* git_not_found.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		B241F9321081005600B179C8 /* BlobAppDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = BlobAppDelegate.rb; sourceTree = "<group>"; };
 		B2FA68DE1082463800F1E058 /* BToolbarDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = BToolbarDelegate.rb; path = ruby/Delegates/BToolbarDelegate.rb; sourceTree = "<group>"; };
 		B2FA690310824AFC00F1E058 /* default.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = default.html; path = html/default.html; sourceTree = "<group>"; };
+		B2FA69491082E2D000F1E058 /* Git.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = Git.rb; path = ruby/lib/Git.rb; sourceTree = "<group>"; };
+		B2FA69551082E7B000F1E058 /* git_not_found.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = git_not_found.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,7 @@
 		B2FA68D5108245B700F1E058 /* ruby */ = {
 			isa = PBXGroup;
 			children = (
+				B2FA69461082E2A300F1E058 /* lib */,
 				B2FA68DD1082461C00F1E058 /* Delegates */,
 				B2FA68DC108245F100F1E058 /* Controllers */,
 			);
@@ -220,8 +225,17 @@
 			isa = PBXGroup;
 			children = (
 				B2FA690310824AFC00F1E058 /* default.html */,
+				B2FA69551082E7B000F1E058 /* git_not_found.html */,
 			);
 			name = html;
+			sourceTree = "<group>";
+		};
+		B2FA69461082E2A300F1E058 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B2FA69491082E2D000F1E058 /* Git.rb */,
+			);
+			name = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +291,8 @@
 				B241F9331081005600B179C8 /* BlobAppDelegate.rb in Resources */,
 				B2FA68DF1082463800F1E058 /* BToolbarDelegate.rb in Resources */,
 				B2FA690410824AFC00F1E058 /* default.html in Resources */,
+				B2FA694A1082E2D000F1E058 /* Git.rb in Resources */,
+				B2FA69561082E7B000F1E058 /* git_not_found.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

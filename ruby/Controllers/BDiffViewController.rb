@@ -5,9 +5,15 @@
 # Copyright 2009 Seedless Media. All rights reserved.
 
 class BDiffViewController < NSObject
-  attr_writer :button
-  
-  def clicked(sender)
-    puts "Button clicked!"
+  attr_accessor :webView
+
+  def load_local_html_page(page)
+    bundle = NSBundle.mainBundle
+    file_path = bundle.pathForResource(page, ofType:'html')
+    
+    return if not file_path
+    
+    url = NSURL.fileURLWithPath(file_path)
+    @webView.mainFrame.loadRequest(NSURLRequest.requestWithURL(url))
   end
 end

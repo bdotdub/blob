@@ -7,8 +7,21 @@
 class BlobAppDelegate < NSObject
   attr_writer :window
   attr_writer :webView
+  attr_accessor :webViewController
   
   def awakeFromNib
+    add_main_toolbar
+    create_webview_controller
+    
+    Git.init
+    if Git.found_binary?
+      @webViewController.load_local_html_page('default')
+    else
+      @webViewController.load_local_html_page('git_not_found')
+    end
+  end
+  
+  def add_main_toolbar
     toolbar = NSToolbar.alloc.initWithIdentifier("BToolbar")
     
     toolbar.setAutosavesConfiguration(true)
@@ -16,16 +29,10 @@ class BlobAppDelegate < NSObject
     toolbar.delegate = BToolbarDelegate.new
     
     @window.setToolbar(toolbar)
-    load_local_html_page 'default'
   end
   
-  def load_local_html_page(page)
-    bundle = NSBundle.mainBundle
-    file_path = bundle.pathForResource('default', ofType:'html')
-    
-    return if not file_path
-    
-    url = NSURL.fileURLWithPath(file_path)
-    @webView.mainFrame.loadRequest(NSURLRequest.requestWithURL(url))
+  def create_webview_controller
+    self.webViewController = BDiffViewController.new
+    self.webViewController.webView = @webView
   end
 end
