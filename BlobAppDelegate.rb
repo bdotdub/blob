@@ -9,11 +9,9 @@ class BlobAppDelegate < NSObject
   attr_writer :webView
 
   attr_accessor :webViewController
-  attr_accessor :diffViewController
 
   def awakeFromNib
     add_main_toolbar
-    create_webview_controller
 
     Git.init
     if Git.found_binary?
@@ -25,8 +23,7 @@ class BlobAppDelegate < NSObject
     # Hard coded actions. Will fix when we handle file opening, etc.
     begin
       Git::File.new('/Users/benny/Development/ruby/stage/stage.rb')
-      diffViewController.forward_button.setEnabled(false)
-
+      @webViewController.forward_button.setEnabled(false)
       @webViewController.load_local_html_page('container')
     rescue Git::FileUntracked
     end
@@ -40,10 +37,5 @@ class BlobAppDelegate < NSObject
     toolbar.delegate = BToolbarDelegate.new
 
     @window.setToolbar(toolbar)
-  end
-
-  def create_webview_controller
-    self.webViewController = BDiffViewController.new
-    self.webViewController.webView = @webView
   end
 end

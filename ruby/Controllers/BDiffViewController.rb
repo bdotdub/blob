@@ -20,6 +20,10 @@ class BDiffViewController < NSObject
   end
 
   def previous_revision(sender)
+    script_object = @webView.windowScriptObject()
+    puts script_object.inspect
+    args = ["hello there!"]
+    script_object.callWebScriptMethod("replaceContainerWithHTML", withArguments:args)
   end
 
   def forward_revision(sender)

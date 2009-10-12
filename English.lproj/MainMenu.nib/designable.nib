@@ -839,13 +839,13 @@
 							<bool key="UseBackForwardList">YES</bool>
 							<bool key="AllowsUndo">YES</bool>
 						</object>
-						<object class="NSButton" id="1021896407">
+						<object class="NSButton" id="392653824">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{6, 1}, {154, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="386973556">
+							<object class="NSButtonCell" key="NSCell" id="890175976">
 								<int key="NSCellFlags">-2080244224</int>
 								<int key="NSCellFlags2">134348800</int>
 								<string key="NSContents">Back a Revision</string>
@@ -854,7 +854,7 @@
 									<double key="NSSize">12</double>
 									<int key="NSfFlags">16</int>
 								</object>
-								<reference key="NSControlView" ref="1021896407"/>
+								<reference key="NSControlView" ref="392653824"/>
 								<int key="NSButtonFlags">-1232846593</int>
 								<int key="NSButtonFlags2">173</int>
 								<string key="NSAlternateContents"/>
@@ -863,18 +863,18 @@
 								<int key="NSPeriodicInterval">75</int>
 							</object>
 						</object>
-						<object class="NSButton" id="574286740">
+						<object class="NSButton" id="426167611">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{163, 1}, {154, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="657671963">
+							<object class="NSButtonCell" key="NSCell" id="697842861">
 								<int key="NSCellFlags">-2080244224</int>
 								<int key="NSCellFlags2">134348800</int>
 								<string key="NSContents">Forward a Revision</string>
 								<reference key="NSSupport" ref="29"/>
-								<reference key="NSControlView" ref="574286740"/>
+								<reference key="NSControlView" ref="426167611"/>
 								<int key="NSButtonFlags">-1232846593</int>
 								<int key="NSButtonFlags2">173</int>
 								<string key="NSAlternateContents"/>
@@ -893,7 +893,7 @@
 			<object class="NSCustomObject" id="605772819">
 				<string key="NSClassName">BlobAppDelegate</string>
 			</object>
-			<object class="NSCustomObject" id="263143665">
+			<object class="NSCustomObject" id="828633358">
 				<string key="NSClassName">BDiffViewController</string>
 			</object>
 		</object>
@@ -1239,32 +1239,32 @@
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">previous_revision:</string>
-						<reference key="source" ref="263143665"/>
-						<reference key="destination" ref="1021896407"/>
+						<reference key="source" ref="828633358"/>
+						<reference key="destination" ref="392653824"/>
 					</object>
 					<int key="connectionID">406</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">forward_revision:</string>
-						<reference key="source" ref="263143665"/>
-						<reference key="destination" ref="574286740"/>
+						<reference key="source" ref="828633358"/>
+						<reference key="destination" ref="426167611"/>
 					</object>
 					<int key="connectionID">407</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">previous_button</string>
-						<reference key="source" ref="263143665"/>
-						<reference key="destination" ref="1021896407"/>
+						<reference key="source" ref="828633358"/>
+						<reference key="destination" ref="392653824"/>
 					</object>
 					<int key="connectionID">408</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">forward_button</string>
-						<reference key="source" ref="263143665"/>
-						<reference key="destination" ref="574286740"/>
+						<reference key="source" ref="828633358"/>
+						<reference key="destination" ref="426167611"/>
 					</object>
 					<int key="connectionID">409</int>
 				</object>
@@ -1272,9 +1272,25 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">diffViewController</string>
 						<reference key="source" ref="605772819"/>
-						<reference key="destination" ref="263143665"/>
+						<reference key="destination" ref="828633358"/>
 					</object>
 					<int key="connectionID">413</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">webView</string>
+						<reference key="source" ref="828633358"/>
+						<reference key="destination" ref="695045208"/>
+					</object>
+					<int key="connectionID">415</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">webViewController</string>
+						<reference key="source" ref="605772819"/>
+						<reference key="destination" ref="828633358"/>
+					</object>
+					<int key="connectionID">416</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1890,8 +1906,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="695045208"/>
-							<reference ref="1021896407"/>
-							<reference ref="574286740"/>
+							<reference ref="392653824"/>
+							<reference ref="426167611"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -1907,35 +1923,35 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">401</int>
-						<reference key="object" ref="1021896407"/>
+						<reference key="object" ref="392653824"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="386973556"/>
+							<reference ref="890175976"/>
 						</object>
 						<reference key="parent" ref="439893737"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">402</int>
-						<reference key="object" ref="386973556"/>
-						<reference key="parent" ref="1021896407"/>
+						<reference key="object" ref="890175976"/>
+						<reference key="parent" ref="392653824"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">403</int>
-						<reference key="object" ref="574286740"/>
+						<reference key="object" ref="426167611"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="657671963"/>
+							<reference ref="697842861"/>
 						</object>
 						<reference key="parent" ref="439893737"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">404</int>
-						<reference key="object" ref="657671963"/>
-						<reference key="parent" ref="574286740"/>
+						<reference key="object" ref="697842861"/>
+						<reference key="parent" ref="426167611"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">405</int>
-						<reference key="object" ref="263143665"/>
+						<reference key="object" ref="828633358"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</object>
@@ -2339,7 +2355,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">413</int>
+			<int key="maxID">416</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2387,14 +2403,12 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>diffViewController</string>
 							<string>webView</string>
 							<string>webViewController</string>
 							<string>window</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
