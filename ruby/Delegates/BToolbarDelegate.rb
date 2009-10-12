@@ -6,15 +6,15 @@
 
 class BToolbarDelegate < NSObject
   def toolbarAllowedItemIdentifiers(toolbar)
-    return [NSToolbarFlexibleSpaceItemIdentifier, 
-            NSToolbarSpaceItemIdentifier, 
-            NSToolbarSeparatorItemIdentifier]
+    return [NSToolbarFlexibleSpaceItemIdentifier,
+            NSToolbarSpaceItemIdentifier,
+            NSToolbarShowFontsItemIdentifier]
   end
-  
+
   def toolbarDefaultItemIdentifiers(toolbar)
-    return [NSToolbarSeparatorItemIdentifier]
+    return [NSToolbarShowFontsItemIdentifier]
   end
-  
+
   def toolbar(toolbar, itemForItemIdentifier:itemIdentifier, willBeInsertedIntoToolbar:flag)
     return nil
   end

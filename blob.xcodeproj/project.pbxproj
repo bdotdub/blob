@@ -46,6 +46,9 @@
 		B2FA690410824AFC00F1E058 /* default.html in Resources */ = {isa = PBXBuildFile; fileRef = B2FA690310824AFC00F1E058 /* default.html */; };
 		B2FA694A1082E2D000F1E058 /* Git.rb in Resources */ = {isa = PBXBuildFile; fileRef = B2FA69491082E2D000F1E058 /* Git.rb */; };
 		B2FA69561082E7B000F1E058 /* git_not_found.html in Resources */ = {isa = PBXBuildFile; fileRef = B2FA69551082E7B000F1E058 /* git_not_found.html */; };
+		B2FA69D31082F93900F1E058 /* File.rb in Resources */ = {isa = PBXBuildFile; fileRef = B2FA69D21082F93900F1E058 /* File.rb */; };
+		B2FC1C211083BAB000763A8A /* Errors.rb in Resources */ = {isa = PBXBuildFile; fileRef = B2FC1C201083BAB000763A8A /* Errors.rb */; };
+		B2FFE3651083AF7C00A3B872 /* container.html in Resources */ = {isa = PBXBuildFile; fileRef = B2FFE3641083AF7C00A3B872 /* container.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +93,10 @@
 		B2FA68DE1082463800F1E058 /* BToolbarDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = BToolbarDelegate.rb; path = ruby/Delegates/BToolbarDelegate.rb; sourceTree = "<group>"; };
 		B2FA690310824AFC00F1E058 /* default.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = default.html; path = html/default.html; sourceTree = "<group>"; };
 		B2FA69491082E2D000F1E058 /* Git.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = Git.rb; path = ruby/lib/Git.rb; sourceTree = "<group>"; };
-		B2FA69551082E7B000F1E058 /* git_not_found.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = git_not_found.html; sourceTree = "<group>"; };
+		B2FA69551082E7B000F1E058 /* git_not_found.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = git_not_found.html; path = html/git_not_found.html; sourceTree = "<group>"; };
+		B2FA69D21082F93900F1E058 /* File.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = File.rb; path = ruby/lib/Git/File.rb; sourceTree = "<group>"; };
+		B2FC1C201083BAB000763A8A /* Errors.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = Errors.rb; path = ruby/lib/Git/Errors.rb/Errors.rb; sourceTree = "<group>"; };
+		B2FFE3641083AF7C00A3B872 /* container.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = container.html; path = html/container.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +232,7 @@
 			children = (
 				B2FA690310824AFC00F1E058 /* default.html */,
 				B2FA69551082E7B000F1E058 /* git_not_found.html */,
+				B2FFE3641083AF7C00A3B872 /* container.html */,
 			);
 			name = html;
 			sourceTree = "<group>";
@@ -233,9 +240,19 @@
 		B2FA69461082E2A300F1E058 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				B2FA69D11082F91600F1E058 /* Git */,
 				B2FA69491082E2D000F1E058 /* Git.rb */,
 			);
 			name = lib;
+			sourceTree = "<group>";
+		};
+		B2FA69D11082F91600F1E058 /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				B2FA69D21082F93900F1E058 /* File.rb */,
+				B2FC1C201083BAB000763A8A /* Errors.rb */,
+			);
+			name = Git;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +310,9 @@
 				B2FA690410824AFC00F1E058 /* default.html in Resources */,
 				B2FA694A1082E2D000F1E058 /* Git.rb in Resources */,
 				B2FA69561082E7B000F1E058 /* git_not_found.html in Resources */,
+				B2FA69D31082F93900F1E058 /* File.rb in Resources */,
+				B2FFE3651083AF7C00A3B872 /* container.html in Resources */,
+				B2FC1C211083BAB000763A8A /* Errors.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
