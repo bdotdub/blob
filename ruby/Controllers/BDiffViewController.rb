@@ -39,9 +39,9 @@ class BDiffViewController < NSObject
     file_lines.each do |line|
       line_output = ''
       if line =~ /^\+/
-        line_output << "<div class='green'>"
+        line_output << "<div class='add'>"
       elsif line =~ /^-/
-        line_output << "<div class='red'>"
+        line_output << "<div class='delete'>"
       else
         line_output << "<div>"
       end

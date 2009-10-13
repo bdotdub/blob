@@ -27,15 +27,18 @@ class BlobAppDelegate < NSObject
     begin
       @git_file = Git::File.new(filename)
       @webViewController.load_local_html_page('container')
+      @webView.setFrameLoadDelegate(self)
 
       if @git_file.revisions.length > 1
         @webViewController.previous_button.enabled = true
       end
-
-      @webViewController.load_file_diffs(@git_file)
     rescue Git::FileUntracked
       @git_file = nil
     end
+  end
+
+  def webView(sender, didFinishLoadForFrame:frame)
+    @webViewController.load_file_diffs(@git_file)
   end
 
   def open_file_panel(sender)
