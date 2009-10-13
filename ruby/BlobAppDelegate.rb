@@ -9,6 +9,7 @@ class BlobAppDelegate < NSObject
   attr_writer :webView
 
   attr_accessor :webViewController
+  attr_accessor :git_file
 
   def awakeFromNib
     add_main_toolbar
@@ -20,15 +21,31 @@ class BlobAppDelegate < NSObject
       @webViewController.load_local_html_page('git_not_found')
     end
   end
-  
-  def stub_open_file(sender)
+
+  def open_file(filename)
     # Hard coded actions. Will fix when we handle file opening, etc.
     begin
-      git_file = Git::File.new("/Users/#{ENV['USER']}/Development/ruby/stage/stage.rb")
-      @webViewController.previous_button.setEnabled(true)
+      @git_file = Git::File.new(filename)
       @webViewController.load_local_html_page('container')
-      @webViewController.load_file_diffs(git_file)
+
+      if @git_file.revisions.length > 1
+        @webViewController.previous_button.enabled = true
+      end
+
+      @webViewController.load_file_diffs(@git_file)
     rescue Git::FileUntracked
+      @git_file = nil
+    end
+  end
+
+  def open_file_panel(sender)
+    open_panel = NSOpenPanel.openPanel
+    open_panel.allowsMultipleSelection = false
+
+    result = open_panel.runModalForTypes(nil)
+    if result == NSOKButton
+      filename = open_panel.filenames[0]
+      open_file(filename)
     end
   end
 

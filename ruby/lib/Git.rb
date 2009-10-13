@@ -5,11 +5,16 @@
 # Copyright 2009 Seedless Media. All rights reserved.
 
 class Git
+  # List partially stolen from GitX
   DEFAULT_LOCATIONS = %w[
     /usr/bin/git
     /opt/bin/git
-    /opt/local/bin/git
     /usr/local/bin/git
+    /opt/local/bin/git
+    /sw/bin/git
+    /opt/git/bin/git
+    /usr/local/bin/git
+    /usr/local/git/bin/git
   ]
 
   @@git_path = nil
@@ -19,11 +24,13 @@ class Git
   end
 
   def Git.find_binary
-  puts "in find_binary"
     git_path = `which git`.chomp
     return git_path unless git_path.empty?
 
-    DEFAULT_LOCATIONS.each do |path|
+    locations = DEFAULT_LOCATIONS.clone
+    locations << "~/bin/git".stringByExpandingTildeInPath
+
+    locations.each do |path|
       return path if ::File.exists?(path) and ::File.executable?(path)
     end
 

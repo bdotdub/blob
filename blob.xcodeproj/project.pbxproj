@@ -89,7 +89,7 @@
 		8D1107320486CEB800E47090 /* blob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20F2A281080EAC600E57E29 /* BDiffViewController.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = BDiffViewController.rb; path = ruby/Controllers/BDiffViewController.rb; sourceTree = "<group>"; };
 		B241F8F91080FB3000B179C8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
-		B241F9321081005600B179C8 /* BlobAppDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = BlobAppDelegate.rb; sourceTree = "<group>"; };
+		B241F9321081005600B179C8 /* BlobAppDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = BlobAppDelegate.rb; path = ruby/BlobAppDelegate.rb; sourceTree = "<group>"; };
 		B2FA68DE1082463800F1E058 /* BToolbarDelegate.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = BToolbarDelegate.rb; path = ruby/Delegates/BToolbarDelegate.rb; sourceTree = "<group>"; };
 		B2FA690310824AFC00F1E058 /* default.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = default.html; path = html/default.html; sourceTree = "<group>"; };
 		B2FA69491082E2D000F1E058 /* Git.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = Git.rb; path = ruby/lib/Git.rb; sourceTree = "<group>"; };
@@ -117,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				B2FA68D5108245B700F1E058 /* ruby */,
-				B241F9321081005600B179C8 /* BlobAppDelegate.rb */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -207,6 +206,7 @@
 				B2FA69461082E2A300F1E058 /* lib */,
 				B2FA68DD1082461C00F1E058 /* Delegates */,
 				B2FA68DC108245F100F1E058 /* Controllers */,
+				B241F9321081005600B179C8 /* BlobAppDelegate.rb */,
 			);
 			name = ruby;
 			sourceTree = "<group>";

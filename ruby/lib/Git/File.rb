@@ -10,9 +10,22 @@ class Git
 
     def initialize(filename)
       Dir.chdir(::File.expand_path(::File.dirname(filename)))
-      revisions = `#{Git.path} rev-list HEAD -- #{filename}`.chomp.split("\n")
+      @revisions = `#{Git.path} rev-list HEAD -- #{filename}`.chomp.split("\n")
 
       raise Git::FileUntracked if $? != 0
+      @current_revision_index = 0
+    end
+
+    def current_revision
+      @revisions[@current_revision_index]
+    end
+
+    def previous_revision
+      if @current_revision_index <= (@revisions.length - 2)
+        @revisions[@current_revision_index + 1]
+      end
+
+      nil
     end
   end
 end
