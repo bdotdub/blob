@@ -24,7 +24,7 @@ class BlobAppDelegate < NSObject
   def stub_open_file(sender)
     # Hard coded actions. Will fix when we handle file opening, etc.
     begin
-      git_file = Git::File.new('/Users/benny/Development/ruby/stage/stage.rb')
+      git_file = Git::File.new("/Users/#{ENV['USER']}/Development/ruby/stage/stage.rb")
       @webViewController.previous_button.setEnabled(true)
       @webViewController.load_local_html_page('container')
       @webViewController.load_file_diffs(git_file)
