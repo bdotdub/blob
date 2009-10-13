@@ -12,7 +12,7 @@ class BToolbarDelegate < NSObject
   end
 
   def toolbarDefaultItemIdentifiers(toolbar)
-    return [NSToolbarShowFontsItemIdentifier]
+    return []
   end
 
   def toolbar(toolbar, itemForItemIdentifier:itemIdentifier, willBeInsertedIntoToolbar:flag)

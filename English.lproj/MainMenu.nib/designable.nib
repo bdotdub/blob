@@ -870,30 +870,6 @@
 								<int key="NSPeriodicInterval">75</int>
 							</object>
 						</object>
-						<object class="NSButton" id="530138901">
-							<reference key="NSNextResponder" ref="439893737"/>
-							<int key="NSvFlags">293</int>
-							<string key="NSFrame">{{323, 4}, {96, 28}}</string>
-							<reference key="NSSuperview" ref="439893737"/>
-							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="299438732">
-								<int key="NSCellFlags">67239424</int>
-								<int key="NSCellFlags2">134348800</int>
-								<string key="NSContents">Load File</string>
-								<object class="NSFont" key="NSSupport">
-									<string key="NSName">LucidaGrande</string>
-									<double key="NSSize">1.100000e+01</double>
-									<int key="NSfFlags">3100</int>
-								</object>
-								<reference key="NSControlView" ref="530138901"/>
-								<int key="NSButtonFlags">-2038284033</int>
-								<int key="NSButtonFlags2">129</int>
-								<string key="NSAlternateContents"/>
-								<string key="NSKeyEquivalent"/>
-								<int key="NSPeriodicDelay">200</int>
-								<int key="NSPeriodicInterval">25</int>
-							</object>
-						</object>
 					</object>
 					<string key="NSFrameSize">{647, 591}</string>
 					<reference key="NSSuperview"/>
@@ -1216,14 +1192,6 @@
 					<int key="connectionID">373</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">openDocument:</string>
-						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="722745758"/>
-					</object>
-					<int key="connectionID">374</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="1021"/>
@@ -1299,9 +1267,9 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">open_file_panel:</string>
 						<reference key="source" ref="605772819"/>
-						<reference key="destination" ref="530138901"/>
+						<reference key="destination" ref="722745758"/>
 					</object>
-					<int key="connectionID">420</int>
+					<int key="connectionID">421</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1920,7 +1888,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="1046508649"/>
 							<reference ref="146721571"/>
-							<reference ref="530138901"/>
 							<reference ref="695045208"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
@@ -1967,20 +1934,6 @@
 						<int key="objectID">405</int>
 						<reference key="object" ref="413423115"/>
 						<reference key="parent" ref="57408742"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">417</int>
-						<reference key="object" ref="530138901"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="299438732"/>
-						</object>
-						<reference key="parent" ref="439893737"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">418</int>
-						<reference key="object" ref="299438732"/>
-						<reference key="parent" ref="530138901"/>
 					</object>
 				</object>
 			</object>
@@ -2141,8 +2094,6 @@
 					<string>403.IBPluginDependency</string>
 					<string>404.IBPluginDependency</string>
 					<string>405.IBPluginDependency</string>
-					<string>417.IBPluginDependency</string>
-					<string>418.IBPluginDependency</string>
 					<string>5.IBPluginDependency</string>
 					<string>5.ImportedFromIB2</string>
 					<string>56.IBPluginDependency</string>
@@ -2336,8 +2287,6 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
@@ -2395,7 +2344,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">420</int>
+			<int key="maxID">421</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
