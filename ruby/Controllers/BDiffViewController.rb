@@ -30,7 +30,7 @@ class BDiffViewController < NSObject
   @git_file = git_file
     first_revision = git_file.current_revision    if first_revision.nil?
     second_revision = git_file.previous_revision  if second_revision.nil?
-    
+
     file_diff = `#{Git.path} diff -U10000 #{first_revision}..#{second_revision} -- #{git_file.path}`
     file_lines = file_diff.split("\n")
     remove_diff_header file_lines
@@ -46,7 +46,7 @@ class BDiffViewController < NSObject
         line_output << "<div>"
       end
 
-      line_output << line # entities(line)
+      line_output << line
       line_output << "</div>"
 
       diff_output << line_output
@@ -67,7 +67,7 @@ class BDiffViewController < NSObject
     raise "Could not find last line of diff" if index_of_last_diff_line == -1
     (index_of_last_diff_line + 1).times do lines.shift end
   end
-  
+
   def replace_container_text(html)
     script_object = @webView.windowScriptObject()
     args = [html]
