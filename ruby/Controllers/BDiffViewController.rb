@@ -19,25 +19,8 @@ class BDiffViewController < NSObject
     @webView.mainFrame.loadRequest(NSURLRequest.requestWithURL(url))
   end
 
-  def previous_revision(sender)
-    load_file_diffs(@git_file)
-  end
-
-  def forward_revision(sender)
-  end
-
   def load_file_diffs(git_file, first_revision=nil, second_revision=nil)
-  @git_file = git_file
-    first_revision = git_file.current_revision    if first_revision.nil?
-    second_revision = git_file.previous_revision  if second_revision.nil?
-
-    if second_revision
-      file_diff = `#{Git.path} diff -U10000 #{first_revision}..#{second_revision} -- #{git_file.path}`
-      file_lines = file_diff.split("\n")
-      remove_diff_header file_lines
-    else
-      file_lines = `cat #{git_file.path}`.chomp.split("\n")
-    end
+    file_lines = git_file.revision_diff(first_revision, second_revision)
 
     diff_output = '<pre>'
     file_lines.each do |line|
@@ -57,19 +40,6 @@ class BDiffViewController < NSObject
     end
     diff_output << '</pre>'
     replace_container_text diff_output
-  end
-
-  def remove_diff_header(lines)
-    index_of_last_diff_line = -1
-    lines.each_with_index do |line, index|
-      if line =~ /^@@/
-        index_of_last_diff_line = index
-        break
-      end
-    end
-
-    raise "Could not find last line of diff" if index_of_last_diff_line == -1
-    (index_of_last_diff_line + 1).times do lines.shift end
   end
 
   def replace_container_text(html)

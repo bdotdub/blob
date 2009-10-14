@@ -30,5 +30,34 @@ class Git
 
       revision_hash
     end
+
+    def remove_diff_header(lines)
+      index_of_last_diff_line = -1
+      lines.each_with_index do |line, index|
+        if line =~ /^@@/
+          index_of_last_diff_line = index
+          break
+        end
+      end
+
+
+      raise "Could not find last line of diff" if index_of_last_diff_line == -1
+      (index_of_last_diff_line + 1).times do lines.shift end
+    end
+
+    def revision_diff(first_revision, second_revision)
+      first_revision = current_revision    if first_revision.nil?
+      second_revision = previous_revision  if second_revision.nil?
+
+      if second_revision
+        file_diff = `#{Git.path} diff -U10000 #{first_revision}..#{second_revision} -- #{path}`
+        file_lines = file_diff.split("\n")
+        remove_diff_header file_lines
+      else
+        file_lines = `cat #{path}`.chomp.split("\n")
+      end
+
+      file_lines
+    end
   end
 end
