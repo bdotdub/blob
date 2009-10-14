@@ -5,11 +5,12 @@
 # Copyright 2009 Seedless Media. All rights reserved.
 
 class BlobAppDelegate < NSObject
-  attr_writer :window
   attr_writer :webView
+  attr_writer :window
 
-  attr_accessor :webViewController
   attr_accessor :git_file
+  attr_accessor :toolbar
+  attr_accessor :webViewController
 
   def awakeFromNib
     add_main_toolbar
@@ -28,10 +29,6 @@ class BlobAppDelegate < NSObject
       @git_file = Git::File.new(filename)
       @webViewController.load_local_html_page('container')
       @webView.setFrameLoadDelegate(self)
-
-      if @git_file.revisions.length > 1
-        @webViewController.previous_button.enabled = true
-      end
     rescue Git::FileUntracked
       @git_file = nil
     end
@@ -39,6 +36,7 @@ class BlobAppDelegate < NSObject
 
   def webView(sender, didFinishLoadForFrame:frame)
     @webViewController.load_file_diffs(@git_file)
+    @toolbar.setVisible(true)
   end
 
   def open_file_panel(sender)
@@ -53,12 +51,13 @@ class BlobAppDelegate < NSObject
   end
 
   def add_main_toolbar
-    toolbar = NSToolbar.alloc.initWithIdentifier("BToolbar")
+    @toolbar = NSToolbar.alloc.initWithIdentifier("BToolbar")
 
-    toolbar.setAutosavesConfiguration(true)
-    toolbar.setDisplayMode(NSToolbarDisplayModeIconAndLabel)
-    toolbar.delegate = BToolbarDelegate.new
+    @toolbar.setAutosavesConfiguration(true)
+    @toolbar.setDisplayMode(NSToolbarDisplayModeIconAndLabel)
+    @toolbar.delegate = BToolbarDelegate.new
 
     @window.setToolbar(toolbar)
+    @toolbar.setVisible(false)
   end
 end
