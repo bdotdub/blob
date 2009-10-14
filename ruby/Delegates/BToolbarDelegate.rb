@@ -5,6 +5,8 @@
 # Copyright 2009 Seedless Media. All rights reserved.
 
 class BToolbarDelegate < NSObject
+  attr_accessor :slider
+
   BRevisionSliderIdentifier = "RevisionSliderIdentifier"
 
   def toolbarAllowedItemIdentifiers(toolbar)
@@ -26,13 +28,17 @@ class BToolbarDelegate < NSObject
       toolbar_item.setPaletteLabel('Revisions')
       toolbar_item.setToolTip('Revisions')
 
-      slider = NSSlider.alloc.initWithFrame(NSMakeRect(100, 100, 200, 50))
-      slider.setMinValue(0)
-      slider.setMaxValue(10)
-      slider.setIntValue(5)
+      @slider = NSSlider.alloc.initWithFrame(NSMakeRect(100, 100, 200, 50))
+      @slider.setMinValue(0)
+      @slider.setMaxValue(1)
+      @slider.setIntValue(1)
 
-      slider.setAllowsTickMarkValuesOnly(true)
-      slider.setNumberOfTickMarks(10)
+      @slider.setAllowsTickMarkValuesOnly(true)
+      @slider.setNumberOfTickMarks(1)
+
+      @slider.setTarget(self)
+      @slider.setAction('value_changed')
+      # @slider.setEnabled(false)
 
       toolbar_item.setView(slider)
       toolbar_item.setMinSize(NSMakeSize(200, 50))
@@ -41,5 +47,8 @@ class BToolbarDelegate < NSObject
     end
 
     return nil
+  end
+  
+  def value_changed
   end
 end

@@ -31,9 +31,13 @@ class BDiffViewController < NSObject
     first_revision = git_file.current_revision    if first_revision.nil?
     second_revision = git_file.previous_revision  if second_revision.nil?
 
-    file_diff = `#{Git.path} diff -U10000 #{first_revision}..#{second_revision} -- #{git_file.path}`
-    file_lines = file_diff.split("\n")
-    remove_diff_header file_lines
+    if second_revision
+      file_diff = `#{Git.path} diff -U10000 #{first_revision}..#{second_revision} -- #{git_file.path}`
+      file_lines = file_diff.split("\n")
+      remove_diff_header file_lines
+    else
+      file_lines = `cat #{git_file.path}`.chomp.split("\n")
+    end
 
     diff_output = '<pre>'
     file_lines.each do |line|

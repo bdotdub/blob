@@ -12,6 +12,17 @@ class BlobAppDelegate < NSObject
   attr_accessor :toolbar
   attr_accessor :webViewController
 
+  def add_main_toolbar
+    @toolbar = NSToolbar.alloc.initWithIdentifier("BToolbar")
+
+    @toolbar.setAutosavesConfiguration(true)
+    @toolbar.setDisplayMode(NSToolbarDisplayModeIconAndLabel)
+    @toolbar.delegate = BToolbarDelegate.new
+
+    @window.setToolbar(toolbar)
+    @toolbar.setVisible(false)
+  end
+
   def awakeFromNib
     add_main_toolbar
 
@@ -36,7 +47,6 @@ class BlobAppDelegate < NSObject
 
   def webView(sender, didFinishLoadForFrame:frame)
     @webViewController.load_file_diffs(@git_file)
-    @toolbar.setVisible(true)
   end
 
   def open_file_panel(sender)
@@ -48,16 +58,5 @@ class BlobAppDelegate < NSObject
       filename = open_panel.filenames[0]
       open_file(filename)
     end
-  end
-
-  def add_main_toolbar
-    @toolbar = NSToolbar.alloc.initWithIdentifier("BToolbar")
-
-    @toolbar.setAutosavesConfiguration(true)
-    @toolbar.setDisplayMode(NSToolbarDisplayModeIconAndLabel)
-    @toolbar.delegate = BToolbarDelegate.new
-
-    @window.setToolbar(toolbar)
-    @toolbar.setVisible(false)
   end
 end
