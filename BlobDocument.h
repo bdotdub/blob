@@ -11,5 +11,7 @@
 
 @interface BlobDocument : NSDocument
 {
+  IBOutlet NSWindow *mainWindow;
 }
+
 @end
