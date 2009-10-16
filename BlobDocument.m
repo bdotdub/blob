@@ -1,23 +1,23 @@
 //
-//  MyDocument.m
+//  BlobDocument.m
 //  blob
 //
 //  Created by Benny Wong on 10/15/09.
-//  Copyright __MyCompanyName__ 2009 . All rights reserved.
+//  Copyright Seedless Media 2009 . All rights reserved.
 //
 
-#import "MyDocument.h"
+#import "BlobDocument.h"
 
-@implementation MyDocument
+@implementation BlobDocument
 
 - (id)init
 {
     self = [super init];
     if (self) {
-    
+
         // Add your subclass-specific initialization here.
         // If an error occurs here, send a [self release] message and return nil.
-    
+
     }
     return self;
 }
@@ -26,7 +26,7 @@
 {
     // Override returning the nib file name of the document
     // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
-    return @"MyDocument";
+    return @"BlobDocument";
 }
 
 - (void)windowControllerDidLoadNib:(NSWindowController *) aController
@@ -44,22 +44,22 @@
     // For applications targeted for Panther or earlier systems, you should use the deprecated API -dataRepresentationOfType:. In this case you can also choose to override -fileWrapperRepresentationOfType: or -writeToFile:ofType: instead.
 
     if ( outError != NULL ) {
-		*outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
-	}
-	return nil;
+    *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
+  }
+  return nil;
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
 {
     // Insert code here to read your document from the given data of the specified type.  If the given outError != NULL, ensure that you set *outError when returning NO.
 
-    // You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead. 
-    
+    // You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
+
     // For applications targeted for Panther or earlier systems, you should use the deprecated API -loadDataRepresentation:ofType. In this case you can also choose to override -readFromFile:ofType: or -loadFileWrapperRepresentation:ofType: instead.
-    
+
     if ( outError != NULL ) {
-		*outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
-	}
+    *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:unimpErr userInfo:NULL];
+  }
     return YES;
 }
 
