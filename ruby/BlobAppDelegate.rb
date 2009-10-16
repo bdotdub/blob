@@ -20,7 +20,7 @@ class BlobAppDelegate < NSObject
     @toolbar.delegate = BToolbarDelegate.new
 
     @window.setToolbar(toolbar)
-    @toolbar.setVisible(false)
+    # @toolbar.setVisible(false)
   end
 
   def awakeFromNib
@@ -47,6 +47,7 @@ class BlobAppDelegate < NSObject
 
   def webView(sender, didFinishLoadForFrame:frame)
     @webViewController.load_file_diffs(@git_file)
+    @toolbar.delegate.revisions = @git_file.revisions
   end
 
   def open_file_panel(sender)
